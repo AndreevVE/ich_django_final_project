@@ -36,6 +36,3 @@ class ReviewSerializer(serializers.ModelSerializer):
             ))
         return value
 
-    def create(self, validated_data):
-        validated_data['booking'] = validated_data['booking']
-        return super().create(validated_data)

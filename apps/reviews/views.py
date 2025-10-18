@@ -21,8 +21,7 @@ class ReviewListView(generics.ListCreateAPIView):
         return [permissions.AllowAny()]
 
     def get_queryset(self):
-        listing_id = self.kwargs['listing_id']
         return Review.objects.filter(
-            booking__listing_id=listing_id,
+            booking__listing_id=self.kwargs['listing_id'],
             is_deleted=False
-        )
+        ).select_related('booking__listing', 'author')
