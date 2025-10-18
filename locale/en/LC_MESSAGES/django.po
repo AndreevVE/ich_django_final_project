@@ -1,0 +1,179 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-10-15 20:43+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+# --- Users ---
+msgid "Пользователь"
+msgstr "User"
+
+msgid "Пользователи"
+msgstr "Users"
+
+msgid "Адрес электронной почты"
+msgstr "Email address"
+
+msgid "Имя"
+msgstr "First name"
+
+msgid "Фамилия"
+msgstr "Last name"
+
+# --- Listings ---
+msgid "Объявление"
+msgstr "Listing"
+
+msgid "Объявления"
+msgstr "Listings"
+
+msgid "Заголовок"
+msgstr "Title"
+
+msgid "Описание"
+msgstr "Description"
+
+msgid "Улица и номер дома"
+msgstr "Street and house number"
+
+msgid "Город"
+msgstr "City"
+
+msgid "Почтовый индекс"
+msgstr "Postal code"
+
+msgid "Цена"
+msgstr "Price"
+
+msgid "Количество комнат"
+msgstr "Number of rooms"
+
+msgid "Тип жилья"
+msgstr "Housing type"
+
+msgid "Активно"
+msgstr "Active"
+
+msgid "Дата создания"
+msgstr "Created at"
+
+msgid "Дата обновления"
+msgstr "Updated at"
+
+msgid "Количество просмотров"
+msgstr "View count"
+
+msgid "Владелец"
+msgstr "Owner"
+
+# --- Housing types ---
+msgid "Квартира"
+msgstr "Apartment"
+
+msgid "Дом"
+msgstr "House"
+
+msgid "Студия"
+msgstr "Studio"
+
+# --- Bookings ---
+msgid "Бронирование"
+msgstr "Booking"
+
+msgid "Бронирования"
+msgstr "Bookings"
+
+msgid "Арендатор"
+msgstr "Tenant"
+
+msgid "Дата начала"
+msgstr "Start date"
+
+msgid "Дата окончания"
+msgstr "End date"
+
+msgid "Итоговая цена"
+msgstr "Total price"
+
+msgid "Статус"
+msgstr "Status"
+
+# --- Booking statuses ---
+msgid "Ожидает подтверждения"
+msgstr "Pending"
+
+msgid "Подтверждено"
+msgstr "Confirmed"
+
+msgid "Отменено"
+msgstr "Cancelled"
+
+msgid "Завершено"
+msgstr "Completed"
+
+# --- Reviews ---
+msgid "Отзыв"
+msgstr "Review"
+
+msgid "Отзывы"
+msgstr "Reviews"
+
+msgid "Автор отзыва"
+msgstr "Review author"
+
+msgid "Рейтинг (1–5)"
+msgstr "Rating (1–5)"
+
+msgid "Комментарий"
+msgstr "Comment"
+
+msgid "Дата отзыва"
+msgstr "Review date"
+
+# --- History ---
+msgid "Поисковый запрос"
+msgstr "Search query"
+
+msgid "История поиска"
+msgstr "Search history"
+
+msgid "Просмотр объявления"
+msgstr "Listing view"
+
+msgid "История просмотров"
+msgstr "View history"
+
+# --- Validation errors (from serializers) ---
+msgid "Цена должна быть положительной."
+msgstr "Price must be positive."
+
+msgid "Количество комнат должно быть >= 1."
+msgstr "Number of rooms must be at least 1."
+
+msgid "Дата окончания должна быть позже даты начала."
+msgstr "End date must be after start date."
+
+msgid "Нельзя бронировать в прошлом."
+msgstr "Cannot book in the past."
+
+msgid "Это жильё уже забронировано на выбранные даты."
+msgstr "This property is already booked for the selected dates."
+
+msgid "Оставить отзыв можно только после завершённого бронирования."
+msgstr "You can only leave a review after a completed booking."
+
+msgid "Отмена бронирования возможна не позднее чем за 7 дней до даты начала."
+msgstr "Cancellation is only allowed at least 7 days before the start date."

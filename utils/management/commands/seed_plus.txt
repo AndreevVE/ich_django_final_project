@@ -1,0 +1,50 @@
+1.  что бы сид работал убираем валидацию, заменить на время запуска в reviews\models.py
+
+    """
+    _skip_booking_check = False
+
+    def clean(self):
+        if not self._skip_booking_check:
+            booking = self.booking
+            if booking.status not in ['confirmed', 'completed']:
+                raise ValidationError({
+                    'booking': _('Можно оставлять отзыв только по подтверждённым или завершённым бронированиям.')
+                })
+            if timezone.now().date() < booking.end_date:
+                raise ValidationError({
+                    'booking': _('Нельзя оставить отзыв до окончания срока проживания.')
+                })
+
+    def save(self, *args, skip_booking_check=False, **kwargs):
+        self._skip_booking_check = skip_booking_check
+        self.full_clean()
+        super().save(*args, **kwargs)
+    """
+
+2.  что бы сид работал убираем валидацию, заменить на время запуска в bookings\models.py
+
+"""
+# Новый параметр для пропуска валидации
+    def save(self, *args, skip_past_check=False, **kwargs):
+        if not skip_past_check:
+            self.full_clean()
+        else:
+            # валидируем только даты
+            if self.end_date <= self.start_date:
+                raise ValidationError(_('Дата окончания должна быть позже даты начала'))
+
+        # Рассчитываем total_price ТОЛЬКО при создании
+        if self.pk is None:
+            days = (self.end_date - self.start_date).days
+            self.total_price = self.listing.price * days
+
+        super().save(*args, **kwargs)
+
+    def clean(self):
+        if self.start_date and self.end_date:
+            if self.end_date <= self.start_date:
+                raise ValidationError(_('Дата окончания должна быть позже даты начала'))
+            # проверка на прошлое только если skip_past_check не установлен
+            if not hasattr(self, '_skip_past_check') and self.start_date < timezone.now().date():
+                raise ValidationError(_('Нельзя бронировать в прошлом'))
+"""

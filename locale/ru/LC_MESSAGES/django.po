@@ -1,0 +1,177 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-10-15 20:46+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || "
+"(n%100>=11 && n%100<=14)? 2 : 3);\n"
+# --- Users ---
+msgid "Объявление"
+msgstr "Объявление"
+
+#: .\apps\bookings\models.py:14
+msgid "Арендатор"
+msgstr "Арендатор"
+
+#: .\apps\bookings\models.py:15
+msgid "Дата начала"
+msgstr "Дата начала"
+
+#: .\apps\bookings\models.py:16
+msgid "Дата окончания"
+msgstr "Дата окончания"
+
+#: .\apps\bookings\models.py:17
+msgid "Итоговая цена"
+msgstr "Итоговая цена"
+
+#: .\apps\bookings\models.py:18
+msgid "Статус"
+msgstr "Статус"
+
+#: .\apps\bookings\models.py:23
+msgid "Дата окончания должна быть позже даты начала"
+msgstr "Дата окончания должна быть позже даты начала"
+
+#: .\apps\bookings\models.py:25
+msgid "Нельзя бронировать в прошлом"
+msgstr "Нельзя бронировать в прошлом"
+
+#: .\apps\common\models.py:5
+msgid "Дата создания"
+msgstr "Дата создания"
+
+#: .\apps\common\models.py:6
+msgid "Дата обновления"
+msgstr "Дата обновления"
+
+#: .\apps\common\models.py:7
+msgid "Мягко удалено"
+msgstr "Мягко удалено"
+
+#: .\apps\history\models.py:8 .\apps\history\models.py:16
+#: .\apps\users\models.py:15
+msgid "Пользователь"
+msgstr "Пользователь"
+
+#: .\apps\history\models.py:9 .\apps\history\models.py:12
+msgid "Поисковый запрос"
+msgstr "Поисковый запрос"
+
+#: .\apps\history\models.py:13
+msgid "История поиска"
+msgstr "История поиска"
+
+#: .\apps\history\models.py:20
+msgid "Просмотр объявления"
+msgstr "Просмотр объявления"
+
+#: .\apps\history\models.py:21
+msgid "История просмотров"
+msgstr "История просмотров"
+
+#: .\apps\listings\models.py:8
+msgid "Заголовок"
+msgstr "Заголовок"
+
+#: .\apps\listings\models.py:9
+msgid "Описание"
+msgstr "Описание"
+
+#: .\apps\listings\models.py:10
+msgid "Улица и номер дома"
+msgstr "Улица и номер дома"
+
+#: .\apps\listings\models.py:11
+msgid "Город"
+msgstr "Город"
+
+#: .\apps\listings\models.py:12
+msgid "Почтовый индекс"
+msgstr "Почтовый индекс"
+
+#: .\apps\listings\models.py:13
+msgid "Цена"
+msgstr "Цена"
+
+#: .\apps\listings\models.py:14
+msgid "Количество комнат"
+msgstr "Количество комнат"
+
+#: .\apps\listings\models.py:15
+msgid "Тип жилья"
+msgstr "Тип жилья"
+
+#: .\apps\listings\models.py:16
+msgid "Активно"
+msgstr "Активно"
+
+#: .\apps\listings\models.py:17
+msgid "Владелец"
+msgstr "Владелец"
+
+#: .\apps\listings\models.py:21
+msgid "Объявления"
+msgstr "Объявления"
+
+#: .\apps\reviews\models.py:10
+msgid "Автор"
+msgstr "Автор"
+
+#: .\apps\reviews\models.py:11
+msgid "Рейтинг"
+msgstr "Рейтинг"
+
+#: .\apps\reviews\models.py:12
+msgid "Комментарий"
+msgstr "Комментарий"
+
+#: .\apps\reviews\models.py:15
+msgid "Отзыв"
+msgstr "Отзыв"
+
+#: .\apps\reviews\models.py:16
+msgid "Отзывы"
+msgstr "Отзывы"
+
+#: .\apps\users\models.py:7
+msgid "Адрес электронной почты"
+msgstr "Адрес электронной почты"
+
+#: .\apps\users\models.py:8
+msgid "Имя"
+msgstr "Имя"
+
+#: .\apps\users\models.py:9
+msgid "Фамилия"
+msgstr "Фамилия"
+
+#: .\apps\users\models.py:16
+msgid "Пользователи"
+msgstr "Пользователи"
+
+#: .\ich_django_final_project\settings.py:179
+msgid "English"
+msgstr "English"
+
+#: .\ich_django_final_project\settings.py:180
+msgid "German"
+msgstr "German"
+
+#: .\ich_django_final_project\settings.py:181
+msgid "Russian"
+msgstr "Russian"

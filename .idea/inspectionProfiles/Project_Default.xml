@@ -1,0 +1,31 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="PyPackageRequirementsInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredPackages">
+        <list>
+          <option value="cffi" />
+          <option value="google-api-python-client" />
+          <option value="google-auth-httplib2" />
+          <option value="google-generativeai" />
+          <option value="httplib2" />
+          <option value="llvmlite" />
+          <option value="more-itertools" />
+          <option value="msgpack" />
+          <option value="numba" />
+          <option value="numexpr" />
+          <option value="openai-whisper" />
+          <option value="pycparser" />
+          <option value="pyparsing" />
+          <option value="sounddevice" />
+          <option value="soundfile" />
+          <option value="tiktoken" />
+          <option value="uritemplate" />
+          <option value="django-environ" />
+          <option value="mysqlclient" />
+          <option value="djangorestframework" />
+        </list>
+      </option>
+    </inspection_tool>
+  </profile>
+</component>
