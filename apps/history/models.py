@@ -1,4 +1,5 @@
 from django.db import models
+from django.conf import settings
 from django.utils.translation import gettext_lazy as _
 from apps.common.models import BaseModel
 from apps.users.models import User
@@ -6,7 +7,7 @@ from apps.listings.models import Listing
 
 class SearchQuery(BaseModel):
     user = models.ForeignKey(
-        User,
+        settings.AUTH_USER_MODEL,
         on_delete=models.SET_NULL,
         null=True,
         blank=True,

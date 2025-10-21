@@ -35,7 +35,6 @@ class RegisterSerializer(serializers.ModelSerializer):
         validated_data.pop('password2')
         user = User.objects.create_user(**validated_data)
 
-        # Надёжное получение/создание группы
         group_name = 'Landlords' if role == 'landlord' else 'Tenants'
         group, _ = Group.objects.get_or_create(name=group_name)
         user.groups.add(group)

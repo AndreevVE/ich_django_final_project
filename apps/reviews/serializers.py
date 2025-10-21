@@ -1,7 +1,7 @@
 from rest_framework import serializers
 from django.utils.translation import gettext_lazy as _
 from .models import Review
-from apps.bookings.models import Booking
+from apps.common.validators import validate_booking_for_review
 
 
 class ReviewSerializer(serializers.ModelSerializer):
@@ -11,28 +11,17 @@ class ReviewSerializer(serializers.ModelSerializer):
     class Meta:
         model = Review
         fields = (
-            'id',
-            'booking',
-            'listing_title',
-            'author_name',
-            'rating',
-            'comment',
-            'created_at'
+            'id', 'booking', 'listing_title', 'author_name',
+            'rating', 'comment', 'created_at'
         )
         read_only_fields = ('created_at',)
 
     def validate_booking(self, value):
-        """Проверяем, что бронирование принадлежит текущему пользователю и завершено."""
-        user = self.context['request'].user
-
-        # Проверка: бронирование существует, завершено и принадлежит пользователю
-        if not Booking.objects.filter(
-            pk=value.pk,
-            tenant=user,
-            status='completed'
-        ).exists():
-            raise serializers.ValidationError(_(
-                "Оставить отзыв можно только на своё завершённое бронирование."
-            ))
+        request = self.context.get('request')
+        if not request or not request.user.is_authenticated:
+            raise serializers.ValidationError(_("Требуется авторизация."))
+        if value.tenant != request.user:
+            raise serializers.ValidationError(_("Вы можете оставить отзыв только на своё бронирование."))
+        validate_booking_for_review(value)
         return value
 

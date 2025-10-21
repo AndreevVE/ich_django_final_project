@@ -17,17 +17,12 @@ class ListingSerializer(serializers.ModelSerializer):
         )
         read_only_fields = ('owner', 'is_active', 'created_at', 'updated_at')
 
-    def validate_price(self, value):
-        if value <= 0:
-            raise serializers.ValidationError(_("Цена должна быть положительной."))
-        return value
-
-    def validate_rooms(self, value):
-        if value < 1:
-            raise serializers.ValidationError(_("Количество комнат должно быть >= 1."))
-        return value
-
     def create(self, validated_data):
         validated_data['is_active'] = True
         validated_data['owner'] = self.context['request'].user
         return super().create(validated_data)
+
+    def update(self, instance, validated_data):
+        validated_data.pop('owner', None)
+        validated_data.pop('is_active', None)
+        return super().update(instance, validated_data)
