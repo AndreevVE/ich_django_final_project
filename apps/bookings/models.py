@@ -52,7 +52,6 @@ class Booking(BaseModel):
             validate_booking_duration(self.start_date, self.end_date)
             if self.tenant and self.listing:
                 validate_not_own_listing(self.tenant, self.listing)
-
                 if self.pk is not None:
                     old = Booking.objects.filter(pk=self.pk).first()
                     if old:

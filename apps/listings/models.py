@@ -2,7 +2,6 @@ from django.db import models
 from django.conf import settings
 from django.utils.translation import gettext_lazy as _
 
-
 from apps.common.models import BaseModel
 from apps.users.models import User
 from .choices import HOUSING_TYPE_CHOICES

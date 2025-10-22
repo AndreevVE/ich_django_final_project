@@ -1,179 +1,448 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-10-15 20:43+0200\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"POT-Creation-Date: 2025-10-21 22:12+0200\n"
+"PO-Revision-Date: 2025-10-22 15:00+0000\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"Language-Team: English <en@li.org>\n"
+"Language: en\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-# --- Users ---
-msgid "Пользователь"
-msgstr "User"
 
-msgid "Пользователи"
-msgstr "Users"
-
-msgid "Адрес электронной почты"
-msgstr "Email address"
-
-msgid "Имя"
-msgstr "First name"
-
-msgid "Фамилия"
-msgstr "Last name"
-
-# --- Listings ---
-msgid "Объявление"
-msgstr "Listing"
-
-msgid "Объявления"
-msgstr "Listings"
-
-msgid "Заголовок"
-msgstr "Title"
-
-msgid "Описание"
-msgstr "Description"
-
-msgid "Улица и номер дома"
-msgstr "Street and house number"
-
-msgid "Город"
-msgstr "City"
-
-msgid "Почтовый индекс"
-msgstr "Postal code"
-
-msgid "Цена"
-msgstr "Price"
-
-msgid "Количество комнат"
-msgstr "Number of rooms"
-
-msgid "Тип жилья"
-msgstr "Housing type"
-
-msgid "Активно"
-msgstr "Active"
-
-msgid "Дата создания"
-msgstr "Created at"
-
-msgid "Дата обновления"
-msgstr "Updated at"
-
-msgid "Количество просмотров"
-msgstr "View count"
-
-msgid "Владелец"
-msgstr "Owner"
-
-# --- Housing types ---
-msgid "Квартира"
-msgstr "Apartment"
-
-msgid "Дом"
-msgstr "House"
-
-msgid "Студия"
-msgstr "Studio"
-
-# --- Bookings ---
-msgid "Бронирование"
-msgstr "Booking"
-
-msgid "Бронирования"
-msgstr "Bookings"
-
+#: .\apps\bookings\admin.py:18 .\apps\bookings\models.py:29
+#: .\apps\users\serializers.py:16
 msgid "Арендатор"
 msgstr "Tenant"
 
-msgid "Дата начала"
-msgstr "Start date"
+#: .\apps\bookings\admin.py:22 .\apps\bookings\models.py:23
+#: .\apps\history\admin.py:28 .\apps\history\models.py:38
+#: .\apps\listings\models.py:37 .\apps\reviews\admin.py:21
+msgid "Объявление"
+msgstr "Listing"
 
-msgid "Дата окончания"
-msgstr "End date"
+#: .\apps\bookings\admin.py:27 .\apps\bookings\models.py:81
+#: .\apps\reviews\models.py:14
+msgid "Бронирование"
+msgstr "Booking"
 
-msgid "Итоговая цена"
-msgstr "Total price"
+#: .\apps\bookings\admin.py:30
+msgid "Даты и время"
+msgstr "Dates and time"
 
-msgid "Статус"
-msgstr "Status"
+#: .\apps\bookings\admin.py:33 .\apps\listings\models.py:18
+msgid "Цена"
+msgstr "Price"
 
-# --- Booking statuses ---
+#: .\apps\bookings\admin.py:36 .\apps\listings\admin.py:26
+#: .\apps\reviews\admin.py:32
+msgid "Системные"
+msgstr "System"
+
+#: .\apps\bookings\choices.py:4
 msgid "Ожидает подтверждения"
 msgstr "Pending"
 
+#: .\apps\bookings\choices.py:5
 msgid "Подтверждено"
 msgstr "Confirmed"
 
+#: .\apps\bookings\choices.py:6
 msgid "Отменено"
 msgstr "Cancelled"
 
+#: .\apps\bookings\choices.py:7
 msgid "Завершено"
 msgstr "Completed"
 
-# --- Reviews ---
-msgid "Отзыв"
-msgstr "Review"
+#: .\apps\bookings\models.py:32
+msgid "Дата начала"
+msgstr "Start date"
 
-msgid "Отзывы"
-msgstr "Reviews"
+#: .\apps\bookings\models.py:33
+msgid "Дата окончания"
+msgstr "End date"
 
-msgid "Автор отзыва"
-msgstr "Review author"
+#: .\apps\bookings\models.py:34
+msgid "Время заезда"
+msgstr "Check-in time"
 
-msgid "Рейтинг (1–5)"
-msgstr "Rating (1–5)"
+#: .\apps\bookings\models.py:35
+msgid "Время выезда"
+msgstr "Check-out time"
 
-msgid "Комментарий"
-msgstr "Comment"
+#: .\apps\bookings\models.py:37
+msgid "Итоговая цена"
+msgstr "Total price"
 
-msgid "Дата отзыва"
-msgstr "Review date"
+#: .\apps\bookings\models.py:43
+msgid "Статус"
+msgstr "Status"
 
-# --- History ---
-msgid "Поисковый запрос"
-msgstr "Search query"
+#: .\apps\bookings\models.py:60
+msgid "Нельзя изменить арендатора после создания бронирования."
+msgstr "Tenant cannot be changed after booking creation."
 
-msgid "История поиска"
-msgstr "Search history"
+#: .\apps\bookings\models.py:62
+msgid "Нельзя изменить объявление после создания бронирования."
+msgstr "Listing cannot be changed after booking creation."
 
-msgid "Просмотр объявления"
-msgstr "Listing view"
+#: .\apps\bookings\models.py:82
+msgid "Бронирования"
+msgstr "Bookings"
 
-msgid "История просмотров"
-msgstr "View history"
+#: .\apps\bookings\serializers.py:31 .\apps\reviews\serializers.py:22
+msgid "Требуется авторизация."
+msgstr "Authentication required."
 
-# --- Validation errors (from serializers) ---
-msgid "Цена должна быть положительной."
-msgstr "Price must be positive."
+#: .\apps\bookings\views.py:46
+msgid "Только арендатор может отменить бронирование."
+msgstr "Only the tenant can cancel the booking."
 
+#: .\apps\bookings\views.py:51
+msgid "Отмена бронирования возможна не позднее чем за 7 дней до даты начала."
+msgstr "Cancellation is only allowed at least 7 days before the start date."
+
+#: .\apps\bookings\views.py:59
+msgid "Только арендодатель может подтвердить бронирование."
+msgstr "Only the landlord can confirm the booking."
+
+#: .\apps\bookings\views.py:67
+msgid "Только арендодатель может отклонить бронирование."
+msgstr "Only the landlord can reject the booking."
+
+#: .\apps\bookings\views.py:74
+msgid "Недопустимое действие. Используйте: cancel, confirm, reject."
+msgstr "Invalid action. Use: cancel, confirm, reject."
+
+#: .\apps\common\models.py:9
+msgid "Дата создания"
+msgstr "Created at"
+
+#: .\apps\common\models.py:10
+msgid "Дата обновления"
+msgstr "Updated at"
+
+#: .\apps\common\models.py:11
+msgid "Мягко удалено"
+msgstr "Soft deleted"
+
+#: .\apps\common\permissions.py:6
+msgid "Доступ разрешён только арендодателям."
+msgstr "Access allowed for landlords only."
+
+#: .\apps\common\permissions.py:17
+msgid "Доступ разрешён только арендаторам."
+msgstr "Access allowed for tenants only."
+
+#: .\apps\common\permissions.py:28
+msgid "Вы не являетесь владельцем этого объекта."
+msgstr "You are not the owner of this object."
+
+#: .\apps\common\permissions.py:38
+msgid "У вас нет прав на доступ к этой брони."
+msgstr "You do not have permission to access this booking."
+
+#: .\apps\common\signals.py:17
+#, python-format
+msgid "Ваше бронирование подтверждено — %(title)s"
+msgstr "Your booking is confirmed — %(title)s"
+
+#: .\apps\common\signals.py:18
+#, python-format
+msgid ""
+"Здравствуйте, %(first_name)s!\n"
+"\n"
+"Вы успешно забронировали жильё \"%(title)s\" с %(start_date)s по "
+"%(end_date)s.\n"
+"\n"
+"Спасибо за использование %(site_name)s!"
+msgstr ""
+"Hello, %(first_name)s!\n"
+"\n"
+"You have successfully booked \"%(title)s\" from %(start_date)s to "
+"%(end_date)s.\n"
+"\n"
+"Thank you for using %(site_name)s!"
+
+#: .\apps\common\signals.py:35
+#, python-format
+msgid "Новое бронирование — %(title)s"
+msgstr "New booking — %(title)s"
+
+#: .\apps\common\signals.py:36
+#, python-format
+msgid ""
+"Здравствуйте, %(first_name)s!\n"
+"\n"
+"Пользователь %(tenant_email)s забронировал ваше объявление \"%(title)s\" с "
+"%(start_date)s по %(end_date)s.\n"
+"\n"
+"Пожалуйста, подтвердите бронирование в личном кабинете."
+msgstr ""
+"Hello, %(first_name)s!\n"
+"\n"
+"User %(tenant_email)s booked your listing \"%(title)s\" from %(start_date)s "
+"to %(end_date)s.\n"
+"\n"
+"Please confirm the booking in your account."
+
+#: .\apps\common\signals.py:53
+#, python-format
+msgid "Бронирование подтверждено — %(title)s"
+msgstr "Booking confirmed — %(title)s"
+
+#: .\apps\common\signals.py:54
+#, python-format
+msgid ""
+"Здравствуйте, %(first_name)s!\n"
+"\n"
+"Арендодатель подтвердил ваше бронирование \"%(title)s\" с %(start_date)s по "
+"%(end_date)s.\n"
+"\n"
+"Добро пожаловать!"
+msgstr ""
+"Hello, %(first_name)s!\n"
+"\n"
+"The landlord has confirmed your booking \"%(title)s\" from %(start_date)s to "
+"%(end_date)s.\n"
+"\n"
+"Welcome!"
+
+#: .\apps\common\signals.py:70 .\apps\common\signals.py:77
+msgid "Бронирование отменено"
+msgstr "Booking cancelled"
+
+#: .\apps\common\signals.py:71
+#, python-format
+msgid "Бронирование на \"%(title)s\" было отменено."
+msgstr "Booking for \"%(title)s\" has been cancelled."
+
+#: .\apps\common\signals.py:78
+#, python-format
+msgid "Бронирование на ваше объявление \"%(title)s\" было отменено."
+msgstr "Booking for your listing \"%(title)s\" has been cancelled."
+
+#: .\apps\common\signals.py:90
+#, python-format
+msgid "Новый отзыв — %(title)s"
+msgstr "New review — %(title)s"
+
+#: .\apps\common\signals.py:91
+#, python-format
+msgid ""
+"Здравствуйте, %(first_name)s!\n"
+"\n"
+"Арендатор оставил отзыв на ваше объявление \"%(title)s\":\n"
+"\n"
+"Оценка: %(rating)s ★\n"
+"Комментарий: %(comment)s\n"
+"\n"
+"Спасибо за вашу работу!"
+msgstr ""
+"Hello, %(first_name)s!\n"
+"\n"
+"The tenant left a review on your listing \"%(title)s\":\n"
+"\n"
+"Rating: %(rating)s ★\n"
+"Comment: %(comment)s\n"
+"\n"
+"Thank you for your work!"
+
+#: .\apps\common\validators.py:11
+msgid "Нельзя использовать дату из прошлого."
+msgstr "Cannot use a past date."
+
+#: .\apps\common\validators.py:17
+#, python-format
+msgid "Минимальная цена — %(min)s €."
+msgstr "Minimum price — %(min)s €."
+
+#: .\apps\common\validators.py:19
+#, python-format
+msgid "Максимальная цена — %(max)s €."
+msgstr "Maximum price — %(max)s €."
+
+#: .\apps\common\validators.py:25
 msgid "Количество комнат должно быть >= 1."
 msgstr "Number of rooms must be at least 1."
 
+#: .\apps\common\validators.py:31
 msgid "Дата окончания должна быть позже даты начала."
 msgstr "End date must be after start date."
 
-msgid "Нельзя бронировать в прошлом."
-msgstr "Cannot book in the past."
+#: .\apps\common\validators.py:37
+#, python-format
+msgid "Минимальный срок бронирования — %(min)s ночей."
+msgstr "Minimum booking period is %(min)s nights."
 
+#: .\apps\common\validators.py:39
+#, python-format
+msgid "Максимальный срок бронирования — %(max)s ночей."
+msgstr "Maximum booking period is %(max)s nights."
+
+#: .\apps\common\validators.py:54
 msgid "Это жильё уже забронировано на выбранные даты."
 msgstr "This property is already booked for the selected dates."
 
-msgid "Оставить отзыв можно только после завершённого бронирования."
-msgstr "You can only leave a review after a completed booking."
+#: .\apps\common\validators.py:60
+msgid "Вы не можете забронировать своё собственное жильё."
+msgstr "You cannot book your own property."
 
-msgid "Отмена бронирования возможна не позднее чем за 7 дней до даты начала."
-msgstr "Cancellation is only allowed at least 7 days before the start date."
+#: .\apps\common\validators.py:75
+msgid "Можно оставлять отзыв только по подтверждённым или завершённым бронированиям."
+msgstr "You can only leave a review for confirmed or completed bookings."
+
+#: .\apps\common\validators.py:80
+msgid "Нельзя оставить отзыв до окончания срока проживания."
+msgstr "You cannot leave a review before the end of the stay."
+
+#: .\apps\history\models.py:16
+msgid "Поисковый запрос"
+msgstr "Search query"
+
+#: .\apps\history\models.py:20
+msgid "История поиска"
+msgstr "Search history"
+
+#: .\apps\history\models.py:43
+msgid "История просмотров"
+msgstr "View history"
+
+#: .\apps\listings\admin.py:17
+msgid "Основное"
+msgstr "General"
+
+#: .\apps\listings\admin.py:20
+msgid "Адрес"
+msgstr "Address"
+
+#: .\apps\listings\admin.py:23
+msgid "Характеристики"
+msgstr "Features"
+
+#: .\apps\listings\choices.py:4
+msgid "Квартира"
+msgstr "Apartment"
+
+#: .\apps\listings\choices.py:5
+msgid "Дом"
+msgstr "House"
+
+#: .\apps\listings\choices.py:6
+msgid "Студия"
+msgstr "Studio"
+
+#: .\apps\listings\models.py:12
+msgid "Заголовок"
+msgstr "Title"
+
+#: .\apps\listings\models.py:14
+msgid "Улица и номер дома"
+msgstr "Street and house number"
+
+#: .\apps\listings\models.py:15
+msgid "Город"
+msgstr "City"
+
+#: .\apps\listings\models.py:16
+msgid "Почтовый индекс"
+msgstr "Postal code"
+
+#: .\apps\listings\models.py:24
+msgid "Количество комнат"
+msgstr "Number of rooms"
+
+#: .\apps\listings\models.py:27
+msgid "Тип жилья"
+msgstr "Property type"
+
+#: .\apps\listings\models.py:28
+msgid "Активно"
+msgstr "Active"
+
+#: .\apps\listings\models.py:32
+msgid "Владелец"
+msgstr "Owner"
+
+#: .\apps\listings\models.py:38
+msgid "Объявления"
+msgstr "Listings"
+
+#: .\apps\reviews\admin.py:17
+msgid "Автор"
+msgstr "Author"
+
+#: .\apps\reviews\admin.py:29
+msgid "Связи (только для чтения)"
+msgstr "Relations (read-only)"
+
+#: .\apps\reviews\models.py:17
+msgid "Рейтинг"
+msgstr "Rating"
+
+#: .\apps\reviews\models.py:19
+msgid "Рейтинг должен быть от 1 до 5."
+msgstr "Rating must be between 1 and 5."
+
+#: .\apps\reviews\models.py:23
+msgid "Комментарий"
+msgstr "Comment"
+
+#: .\apps\reviews\models.py:43
+msgid "Отзыв"
+msgstr "Review"
+
+#: .\apps\reviews\models.py:44
+msgid "Отзывы"
+msgstr "Reviews"
+
+#: .\apps\reviews\serializers.py:24
+msgid "Вы можете оставить отзыв только на своё бронирование."
+msgstr "You can leave a review only for your booking."
+
+#: .\apps\users\admin.py:10
+msgid "Personal info"
+msgstr "Personal info"
+
+#: .\apps\users\admin.py:11
+msgid "Permissions"
+msgstr "Permissions"
+
+#: .\apps\users\admin.py:14
+msgid "Important dates"
+msgstr "Important dates"
+
+#: .\apps\users\models.py:34
+msgid "Адрес электронной почты"
+msgstr "Email address"
+
+#: .\apps\users\models.py:35
+msgid "Имя"
+msgstr "First name"
+
+#: .\apps\users\models.py:36
+msgid "Фамилия"
+msgstr "Last name"
+
+#: .\apps\users\serializers.py:17
+msgid "Арендодатель"
+msgstr "Landlord"
+
+#: .\apps\users\serializers.py:30
+msgid "Пароли не совпадают."
+msgstr "Passwords do not match."
+
+#: .\ich_django_final_project\settings.py:195
+msgid "English"
+msgstr "English"
+
+#: .\ich_django_final_project\settings.py:196
+msgid "German"
+msgstr "German"
+
+#: .\ich_django_final_project\settings.py:197
+msgid "Russian"
+msgstr "Russian"

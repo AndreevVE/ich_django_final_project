@@ -61,6 +61,10 @@ DEBUG = env('DEBUG')
 
 ALLOWED_HOSTS = env.list('ALLOWED_HOSTS', default=[])
 
+STATIC_URL = "/static/"
+STATIC_ROOT = BASE_DIR / "staticfiles"
+STATICFILES_DIRS = [BASE_DIR / "static"]
+
 SIMPLE_JWT = {
     'ACCESS_TOKEN_LIFETIME': timedelta(minutes=60),
     'REFRESH_TOKEN_LIFETIME': timedelta(days=7),
@@ -119,6 +123,7 @@ TEMPLATES = [
                 "django.template.context_processors.request",
                 "django.contrib.auth.context_processors.auth",
                 "django.contrib.messages.context_processors.messages",
+                "django.template.context_processors.i18n",
             ],
         },
     },
@@ -126,6 +131,10 @@ TEMPLATES = [
 
 WSGI_APPLICATION = "ich_django_final_project.wsgi.application"
 
+# почта для консольного отображения signals
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+DEFAULT_FROM_EMAIL = 'noreply@yourdomain.com'
+SITE_NAME = 'Your Rental Platform'
 
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
@@ -201,3 +210,5 @@ STATIC_URL = "static/"
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+
