@@ -1,35 +1,48 @@
-from rest_framework.response import Response
-from rest_framework import generics
+from datetime import timedelta
+from typing import Any
 from django.db.models import Count
 from django.utils import timezone
-from datetime import timedelta
+from django.utils.translation import gettext_lazy as _
+from drf_spectacular.utils import extend_schema, extend_schema_view
+from rest_framework import generics
+from rest_framework.response import Response
+
 from .models import SearchQuery
 from .serializers import PopularSearchSerializer
 
 
+@extend_schema_view(
+    get=extend_schema(
+        summary=_("Popular search queries"),  # Популярные поисковые запросы
+        description=_(
+            "Returns top 10 search queries from the last 30 days. "
+            "Only non-empty queries with length > 2 characters are included."
+        ),  # Возвращает топ-10 поисковых запросов за последние 30 дней. Учитываются только непустые запросы длиной > 2 символов.
+        responses={200: PopularSearchSerializer(many=True)},
+    ),
+)
 class PopularSearchView(generics.GenericAPIView):
-    """
-    Возвращает топ-10 популярных поисковых запросов за последние 30 дней.
-    Учитываются только непустые запросы длиной от 3 символов.
-    Исключаются мягко удалённые записи.
-    """
+    """Return top 10 popular search queries."""
+    # Возвращает топ-10 популярных поисковых запросов
+
     serializer_class = PopularSearchSerializer
 
-    def get(self, request, *args, **kwargs):
+    def get(self, request, *args: Any, **kwargs: Any) -> Response:
+        """Handle GET request for popular search queries."""
+        # Обрабатывает GET-запрос для популярных запросов
         since = timezone.now() - timedelta(days=30)
 
         queryset = (
-            SearchQuery.objects
-            .filter(
+            SearchQuery.objects.filter(
                 is_deleted=False,
                 created_at__gte=since,
                 query__isnull=False,
-                query__length__gt=2
+                query__length__gt=2,
             )
-            .exclude(query='')
-            .values('query')
-            .annotate(count=Count('query'))
-            .order_by('-count')[:10]
+            .exclude(query="")
+            .values("query")
+            .annotate(count=Count("query"))
+            .order_by("-count")[:10]
         )
 
         serializer = self.get_serializer(queryset, many=True)

@@ -2,8 +2,12 @@ from django.contrib import admin
 from django.utils.translation import gettext_lazy as _
 from .models import Listing
 
+
 @admin.register(Listing)
 class ListingAdmin(admin.ModelAdmin):
+    """Admin interface for managing housing listings."""
+    # Админка управления объявлениями о жилье
+
     list_display = (
         'title', 'city', 'price', 'rooms', 'housing_type',
         'is_active', 'owner', 'created_at'
@@ -14,16 +18,16 @@ class ListingAdmin(admin.ModelAdmin):
     autocomplete_fields = ('owner',)
 
     fieldsets = (
-        (_('Основное'), {
+        (_('General'), {  # Основное
             'fields': ('title', 'description', 'owner', 'is_active')
         }),
-        (_('Адрес'), {
+        (_('Address'), {  # Адрес
             'fields': ('street', 'city', 'postal_code')
         }),
-        (_('Характеристики'), {
+        (_('Characteristics'), {  # Характеристики
             'fields': ('price', 'rooms', 'housing_type')
         }),
-        (_('Системные'), {
+        (_('System'), {  # Системные
             'fields': ('created_at', 'updated_at', 'is_deleted'),
             'classes': ('collapse',)
         }),
