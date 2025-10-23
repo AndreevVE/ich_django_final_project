@@ -3,17 +3,20 @@ services:
   db:
     image: mysql
     container_name: my_db
+    restart: always
     environment:
       MYSQL_DATABASE: rental_db
+      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
     ports:
       - "3306:3306"
     volumes:
-      - ./db:/var/lib/mysql
+      - ./mysql_db:/var/lib/mysql
 
 
   web:
     build:
       dockerfile: Dockerfile
+    restart: always
     container_name: myproject
     ports:
       - "8000:8000"

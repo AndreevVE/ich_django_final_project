@@ -16,5 +16,5 @@ ENV PYTHONUNBUFFERED=1
 
 EXPOSE 8000
 
-CMD ["python", "manage.py", "migrate"]
+#CMD ["python", "manage.py", "migrate"]
 CMD ["gunicorn", "ich_django_final_project.wsgi:application", "--bind", "0.0.0.0:8000"]
